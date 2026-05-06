@@ -19,12 +19,18 @@ app.use("/api/auth", require("./routes/auth"));
 app.use("/api/projects", require("./routes/projects"));
 app.use("/api/tasks", require("./routes/tasks"));
 
+app.get("/", (req, res) => {
+  res.send("Backend is LIVE 🚀");
+});
+
 // Serve frontend
 app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
 app.get("*", (req,res)=>{
   res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
 });
+
+
 
 const PORT = process.env.PORT;
 
