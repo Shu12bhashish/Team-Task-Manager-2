@@ -32,7 +32,7 @@ app.get("*", (req,res)=>{
 
 
 
-const PORT = process.env.PORT;
+const PORT = 8080;
 
 app.listen(PORT, "0.0.0.0", () => {
   console.log("🚀 Server running on", PORT);
